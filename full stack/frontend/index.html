@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Futuristic Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-atom"></i>
+                <span>Nexus</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link" data-page="home">Home</a>
+                <a href="#" class="nav-link" data-page="feedback">Feedback</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Pages -->
+    <div id="authPages" class="page active">
+        <!-- Login Form -->
+        <div id="loginPage" class="auth-page active">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>Welcome Back</h2>
+                        <p>Sign in to your account</p>
+                    </div>
+                    <form id="loginForm" class="auth-form">
+                        <div class="form-group">
+                            <input type="email" id="loginEmail" required>
+                            <label for="loginEmail">Email</label>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="loginPassword" required>
+                            <label for="loginPassword">Password</label>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <button type="submit" class="auth-btn">
+                            <span>Sign In</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                    <div class="auth-footer">
+                        <p>Don't have an account? <a href="#" id="showRegister">Sign up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Form -->
+        <div id="registerPage" class="auth-page">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>Create Account</h2>
+                        <p>Join our futuristic platform</p>
+                    </div>
+                    <form id="registerForm" class="auth-form">
+                        <div class="form-group">
+                            <input type="text" id="registerUsername" required>
+                            <label for="registerUsername">Username</label>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="registerEmail" required>
+                            <label for="registerEmail">Email</label>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="registerPassword" required>
+                            <label for="registerPassword">Password</label>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <button type="submit" class="auth-btn">
+                            <span>Create Account</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="#" id="showLogin">Sign in</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Pages -->
+    <div id="appPages" class="page">
+        <!-- Home Page -->
+        <div id="homePage" class="app-page active">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="title-gradient">Welcome to the Future</span>
+                    </h1>
+                    <p class="hero-subtitle">Experience cutting-edge technology with our futuristic platform</p>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Lightning Fast</h3>
+                            <p>Optimized for performance</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Secure</h3>
+                            <p>Enterprise-grade security</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-infinity"></i>
+                            <h3>Scalable</h3>
+                            <p>Grows with your needs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-orbs">
+                        <div class="orb orb-1"></div>
+                        <div class="orb orb-2"></div>
+                        <div class="orb orb-3"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Feedback Page -->
+        <div id="feedbackPage" class="app-page">
+            <div class="feedback-container">
+                <div class="feedback-header">
+                    <h2>Share Your Feedback</h2>
+                    <p>We'd love to hear your thoughts and suggestions</p>
+                </div>
+                <form id="feedbackForm" class="feedback-form">
+                    <div class="form-group">
+                        <input type="text" id="feedbackName" required>
+                        <label for="feedbackName">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="feedbackEmail" required>
+                        <label for="feedbackEmail">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="feedbackMessage" required></textarea>
+                        <label for="feedbackMessage">Your Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Feedback</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                <div class="feedback-history">
+                    <h3>Your Previous Feedback</h3>
+                    <div id="feedbackList" class="feedback-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification System -->
+    <div id="notification" class="notification"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
